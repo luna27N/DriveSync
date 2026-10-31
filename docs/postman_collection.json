@@ -1,0 +1,22 @@
+{
+  "info": {
+    "name": "DriveSync API",
+    "_postman_id": "c4e2d2d1-3d5a-4d3a-9b0a-6a4f2b9c1001",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {"key":"baseUrl","value":"http://localhost:8082/api"},
+    {"key":"adminEmail","value":"admin@drivesync.local"},
+    {"key":"adminPassword","value":"Admin@123"},
+    {"key":"studentEmail","value":"student@drivesync.local"},
+    {"key":"studentPassword","value":"Student@123"},
+    {"key":"driveId","value":"1"}
+  ],
+  "item": [
+    {"name":"Health","request":{"method":"GET","url":"{{baseUrl}}/health"}},
+    {"name":"Admin - Current account","request":{"method":"GET","auth":{"type":"basic","basic":[{"key":"username","value":"{{adminEmail}}","type":"string"},{"key":"password","value":"{{adminPassword}}","type":"string"}]},"url":"{{baseUrl}}/auth/me"}},
+    {"name":"Admin - Eligible students","request":{"method":"GET","auth":{"type":"basic","basic":[{"key":"username","value":"{{adminEmail}}","type":"string"},{"key":"password","value":"{{adminPassword}}","type":"string"}]},"url":"{{baseUrl}}/applications/drive/{{driveId}}/eligible"}},
+    {"name":"Student - Eligible drives","request":{"method":"GET","auth":{"type":"basic","basic":[{"key":"username","value":"{{studentEmail}}","type":"string"},{"key":"password","value":"{{studentPassword}}","type":"string"}]},"url":"{{baseUrl}}/drives/eligible"}},
+    {"name":"Admin - Notification log","request":{"method":"GET","auth":{"type":"basic","basic":[{"key":"username","value":"{{adminEmail}}","type":"string"},{"key":"password","value":"{{adminPassword}}","type":"string"}]},"url":"{{baseUrl}}/drives/{{driveId}}/notifications"}}
+  ]
+}
