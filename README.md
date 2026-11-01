@@ -23,7 +23,7 @@ Prerequisites: JDK 21 or later, Maven 3.9+, Node.js 20+, npm and MySQL 8+.
 ```powershell
 $env:DB_URL="jdbc:mysql://localhost:3306/drivesync?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"
 $env:DB_USERNAME="root"
-$env:DB_PASSWORD="YOUR_MYSQL_PASSWORD"
+$env:SPRING_DATASOURCE_PASSWORD="YOUR_MYSQL_PASSWORD"
 $env:SERVER_PORT="8082"
 $env:FRONTEND_ORIGIN="http://localhost:5173"
 $env:SEED_DEMO_DATA="true"
