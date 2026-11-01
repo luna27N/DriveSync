@@ -62,3 +62,13 @@ Test mode is enabled by default. Real email requires SMTP credentials. Real SMS 
 
 ## Security notes
 This is an academic project deployment, not a security-audited production platform. It currently uses HTTP Basic authentication over HTTPS. Before broad public use, implement a reviewed token/session authentication design, password reset, rate limiting, schema migrations, audit controls and database backups. Do not upload real student data to a public repository.
+## Application Screenshots
+
+### Login Page
+![Login Page](screenshots/login.png)
+
+### Student Dashboard
+![Student Dashboard](screenshots/student-dashboard.png)
+
+### TPO Dashboard
+![TPO Dashboard](screenshots/tpo-dashboard.png)
