@@ -72,3 +72,15 @@ This is an academic project deployment, not a security-audited production platfo
 
 ### TPO Dashboard
 ![TPO Dashboard](screenshots/tpo-dashboard.png)
+## System Architecture
+
+```mermaid
+flowchart TD
+    A[Student / TPO] --> B[React 18 + Vite Frontend]
+    B -->|HTTPS REST API| C[Spring Boot Backend]
+    C --> D[Spring Security]
+    C --> E[Spring Data JPA / Hibernate]
+    E --> F[(TiDB Cloud MySQL Database)]
+
+    B -.-> G[Vercel Deployment]
+    C -.-> H[Render Deployment]
